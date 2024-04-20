@@ -1,0 +1,162 @@
+
+\documentclass{report} % Changed to report document class
+\usepackage{amsthm}
+\usepackage{tcolorbox}
+\usepackage{lipsum} % for dummy text
+\usepackage{graphicx}
+\usepackage{fancyhdr}
+
+% Define theorem environments
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{definition}[theorem]{Definition}
+
+% Define tcolorbox styles
+\tcbset{
+    myexample/.style={
+        enhanced,
+        colback=blue!10!white,
+        colframe=blue!30!black,
+        fonttitle=\bfseries,
+        arc=0mm,
+        separator sign none,
+        leftrule=0pt,
+        rightrule=0pt,
+        top=4pt,
+        bottom=4pt,
+        attach boxed title to top left={yshift=-0.1in, xshift=0.15in},
+        boxed title style={empty, size=minimal, bottom=1.5pt, top=1.5pt},
+        title={Example}
+    },
+    mytheorem/.style={
+        enhanced,
+        colback=green!10!white,
+        colframe=green!30!black,
+        fonttitle=\bfseries,
+        arc=0mm,
+        separator sign none,
+        leftrule=0pt,
+        rightrule=0pt,
+        top=4pt,
+        bottom=4pt,
+        attach boxed title to top left={yshift=-0.1in, xshift=0.15in},
+        boxed title style={empty, size=minimal, bottom=1.5pt, top=1.5pt},
+        title={Theorem}
+    },
+    mydefinition/.style={
+        enhanced,
+        colback=orange!10!white,
+        colframe=orange!30!black,
+        fonttitle=\bfseries,
+        arc=0mm,
+        separator sign none,
+        leftrule=0pt,
+        rightrule=0pt,
+        top=4pt,
+        bottom=4pt,
+        attach boxed title to top left={yshift=-0.1in, xshift=0.15in},
+        boxed title style={empty, size=minimal, bottom=1.5pt, top=1.5pt},
+        title={Definition}
+    },
+    mynote/.style={
+        enhanced,
+        colback=gray!10!white,
+        colframe=gray!30!black,
+        fonttitle=\bfseries,
+        arc=0mm,
+        separator sign none,
+        leftrule=0pt,
+        rightrule=0pt,
+        top=4pt,
+        bottom=4pt,
+        attach boxed title to top left={yshift=-0.1in, xshift=0.15in},
+        boxed title style={empty, size=minimal, bottom=1.5pt, top=1.5pt},
+        title={Note}
+    }
+}
+
+% Define tcolorbox environments
+\newtcolorbox{myexamplebox}[1][]{
+    myexample,
+    #1
+}
+
+\newtcolorbox{mytheorembox}[1][]{
+    mytheorem,
+    #1
+}
+
+\newtcolorbox{mydefinitionbox}[1][]{
+    mydefinition,
+    #1
+}
+
+\newtcolorbox{mynotebox}[1][]{
+    mynote,
+    #1
+}
+
+% Header and footer settings
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{Tannon Warnick}
+\fancyhead[C]{Math 2270}
+\fancyhead[R]{\thepage}
+\renewcommand{\headrulewidth}{1pt} % Line under the header
+\renewcommand{\footrulewidth}{0pt} % No line in the footer
+
+\begin{document}
+
+\begin{titlepage}
+    \centering
+    \includegraphics[width=0.5\textwidth]{University_logo.jpeg}\par\vspace{1cm}
+    {\scshape\Large Linear Algebra Notes \par}
+    \vspace{1.5cm}
+    {\huge\bfseries Tannon Warnick \par}
+    \vspace{2cm}
+    {\Large Math 2270\par}
+    \vfill
+    {\large \today\par}
+\end{titlepage}
+
+\tableofcontents
+\newpage
+
+\chapter{Introduction}
+\section{Overview}
+\lipsum[1-2]
+
+\section{Motivation}
+\lipsum[3-4]
+
+\chapter{Vectors and Spaces}
+\section{Vector Definitions}
+\begin{mydefinitionbox}
+A vector is an element of a vector space.
+\end{mydefinitionbox}
+
+\section{Vector Spaces}
+\begin{mytheorembox}
+Every vector space has a basis.
+\end{mytheorembox}
+
+\begin{myexamplebox}
+The set of all $n \times n$ matrices forms a vector space.
+\tcblower
+sadfsdfawe
+\end{myexamplebox}
+
+\chapter{Linear Transformations}
+\section{Definition}
+\begin{mydefinitionbox}
+A linear transformation is a mapping between vector spaces that preserves vector addition and scalar multiplication.
+\end{mydefinitionbox}
+
+\section{Properties}
+\begin{mytheorembox}
+A linear transformation is injective if and only if its kernel is trivial.
+\end{mytheorembox}
+
+\chapter{Conclusion}
+\lipsum[5-6]
+
+\

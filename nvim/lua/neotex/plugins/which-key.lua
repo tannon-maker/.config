@@ -1,3 +1,11 @@
+local function readTemplate(template, copyInputs)
+  local command = string.format("<cmd>read ~/.config/nvim/templates/%s<CR>", template)
+  if copyInputs then
+    command = command .. ":!cp -r ~/.config/nvim/templates/inputs/ ./<CR>"
+  end
+  return command
+end
+
 return {
   "folke/which-key.nvim",
   event = "VeryLazy",
@@ -291,6 +299,13 @@ return {
           "<cmd>read ~/.config/nvim/templates/MultipleAnswer.tex<CR>",
           "MultipleAnswer.tex",
         },
+        a = {
+          readTemplate("template.tex", true), "Notes.tex (with inputs copy)"
+        },
+        t = {
+          "<cmd>read ~/.config/nvim/templates/TannonsTemplate.tex<CR>",
+          "TannonsTemplate.tex",
+        }, 
       },
     },
   },
@@ -298,5 +313,5 @@ return {
     local wk = require("which-key")
     wk.setup(opts.setup)
     wk.register(opts.defaults)
-  end,
+  end
 }
