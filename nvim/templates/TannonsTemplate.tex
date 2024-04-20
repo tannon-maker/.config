@@ -1,14 +1,14 @@
-
-\documentclass{report} % Changed to report document class
+\documentclass{report}
 \usepackage{amsthm}
 \usepackage{tcolorbox}
-\usepackage{lipsum} % for dummy text
+\usepackage{lipsum}
 \usepackage{graphicx}
+\usepackage{hyperref}
 \usepackage{fancyhdr}
 
 % Define theorem environments
-\newtheorem{theorem}{Theorem}[section]
-\newtheorem{definition}[theorem]{Definition}
+\newtheorem{mytheorem}{Theorem}[section]
+\newtheorem{mydefinition}[mytheorem]{Definition}
 
 % Define tcolorbox styles
 \tcbset{
@@ -75,22 +75,22 @@
 }
 
 % Define tcolorbox environments
-\newtcolorbox{myexamplebox}[1][]{
+\newtcolorbox{myexample}[1][]{
     myexample,
     #1
 }
 
-\newtcolorbox{mytheorembox}[1][]{
+\newtcolorbox{mytheorem}[1][]{
     mytheorem,
     #1
 }
 
-\newtcolorbox{mydefinitionbox}[1][]{
+\newtcolorbox{mydefinition}[1][]{
     mydefinition,
     #1
 }
 
-\newtcolorbox{mynotebox}[1][]{
+\newtcolorbox{mynote}[1][]{
     mynote,
     #1
 }
@@ -99,7 +99,7 @@
 \pagestyle{fancy}
 \fancyhf{}
 \fancyhead[L]{Tannon Warnick}
-\fancyhead[C]{Math 2270}
+\fancyhead[C]{Class Name}
 \fancyhead[R]{\thepage}
 \renewcommand{\headrulewidth}{1pt} % Line under the header
 \renewcommand{\footrulewidth}{0pt} % No line in the footer
@@ -113,7 +113,7 @@
     \vspace{1.5cm}
     {\huge\bfseries Tannon Warnick \par}
     \vspace{2cm}
-    {\Large Math 2270\par}
+    {\Large Class Name\par}
     \vfill
     {\large \today\par}
 \end{titlepage}
@@ -130,33 +130,33 @@
 
 \chapter{Vectors and Spaces}
 \section{Vector Definitions}
-\begin{mydefinitionbox}
+\begin{mydefinition}
 A vector is an element of a vector space.
-\end{mydefinitionbox}
+\end{mydefinition}
 
 \section{Vector Spaces}
-\begin{mytheorembox}
+\begin{mytheorem}
 Every vector space has a basis.
-\end{mytheorembox}
+\end{mytheorem}
 
-\begin{myexamplebox}
+\begin{myexample}
 The set of all $n \times n$ matrices forms a vector space.
 \tcblower
 sadfsdfawe
-\end{myexamplebox}
+\end{myexample}
 
 \chapter{Linear Transformations}
 \section{Definition}
-\begin{mydefinitionbox}
+\begin{mydefinition}
 A linear transformation is a mapping between vector spaces that preserves vector addition and scalar multiplication.
-\end{mydefinitionbox}
+\end{mydefinition}
 
 \section{Properties}
-\begin{mytheorembox}
+\begin{mytheorem}
 A linear transformation is injective if and only if its kernel is trivial.
-\end{mytheorembox}
+\end{mytheorem}
 
 \chapter{Conclusion}
 \lipsum[5-6]
 
-\
+\end{document}
